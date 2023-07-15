@@ -1,12 +1,15 @@
 import React from 'react'
 import '../../styles/header.css'
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import url from '../../backendUrl';
 const Header = (props) => {
   const { data } = props;
+  const navigate = useNavigate();
   const username = data ? data.username : "";
   const toggleLogout=()=>{
     localStorage.removeItem('token')
-      window.location.reload();
+      navigate(`${url}/user/signin`);
   }
   return (
     <div className='header-cont'>
