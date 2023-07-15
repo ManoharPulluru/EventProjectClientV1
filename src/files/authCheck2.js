@@ -10,7 +10,7 @@ const useAuthCheck2 = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) {
-      navigate('/user/signin');
+      navigate(`${url}/user/signin`);
     }else{
       const headers = { token };
       axios.get(`${url}/user/authcheck`, { headers })
@@ -19,7 +19,7 @@ const useAuthCheck2 = () => {
             setData(res.data.data);
           } else {
             setData(null);
-            navigate('/user/signin');
+            navigate(`${url}/user/signin`);
           }
         })
         .catch((err) => {
