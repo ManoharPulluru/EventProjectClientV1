@@ -10,7 +10,7 @@ const useAuthCheck = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (!token) {
-      navigate(`${url}`);
+      navigate(`/`);
     }else{
       const headers = { token };
       axios.get(`${url}/user/authcheck`, { headers })
@@ -19,7 +19,7 @@ const useAuthCheck = () => {
             setData(res.data.data);
           } else {
             setData(null);
-            navigate(`${url}`);
+            navigate('/');
           }
         })
         .catch((err) => {

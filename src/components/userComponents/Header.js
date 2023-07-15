@@ -9,7 +9,7 @@ const Header = (props) => {
   const username = data ? data.username : "";
   const toggleLogout=()=>{
     localStorage.removeItem('token')
-      navigate(`${url}/user/signin`);
+      navigate(`/user/signin`);
   }
   return (
     <div className='header-cont'>
