@@ -1,3 +1,3 @@
-const url = 'http://localhost:3003'
+const url = 'https://eventsever.onrender.com'
 
 export default url
